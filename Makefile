@@ -1,0 +1,3 @@
+test:
+	cd testdata && sh gen.sh
+	go test ./...

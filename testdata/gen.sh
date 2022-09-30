@@ -1,3 +1,5 @@
+#!/bin/bash
+
 protoc \
 -I=. \
 -I=./testdata2 \

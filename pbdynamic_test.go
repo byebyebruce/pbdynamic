@@ -7,8 +7,8 @@ import (
 	"github.com/byebyebruce/pbdynamic/testdata"
 	"github.com/byebyebruce/pbdynamic/testdata/testdata2"
 
-	"github.com/golang/protobuf/proto"
 	"github.com/stretchr/testify/assert"
+	"google.golang.org/protobuf/proto"
 )
 
 const (

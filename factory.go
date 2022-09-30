@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/golang/protobuf/protoc-gen-go/descriptor"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protodesc"
 	"google.golang.org/protobuf/reflect/protoreflect"
 	"google.golang.org/protobuf/reflect/protoregistry"
+	"google.golang.org/protobuf/types/descriptorpb"
 	"google.golang.org/protobuf/types/dynamicpb"
 )
 
@@ -37,7 +37,7 @@ func (pfb *DescriptorFactory) LoadFile(f string) error {
 	if err != nil {
 		return err
 	}
-	var fileSet descriptor.FileDescriptorSet
+	var fileSet descriptorpb.FileDescriptorSet
 	if err := proto.Unmarshal(b, &fileSet); err != nil {
 		return err
 	}
@@ -45,7 +45,7 @@ func (pfb *DescriptorFactory) LoadFile(f string) error {
 }
 
 // Add 读protobuf 描述符文件
-func (pfb *DescriptorFactory) Add(set *descriptor.FileDescriptorSet) error {
+func (pfb *DescriptorFactory) Add(set *descriptorpb.FileDescriptorSet) error {
 	files, err := protodesc.NewFiles(set)
 	if err != nil {
 		return err
