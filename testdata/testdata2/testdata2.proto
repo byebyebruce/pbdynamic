@@ -1,0 +1,10 @@
+syntax = "proto3";
+package testdata2;
+
+option go_package = "github.com/byebyebruce/pbdynamic/testdata/testdata2;testdata2";
+
+import "testdata.proto";
+
+message TestData1 {
+  testdata.PBMsg a = 1;
+}

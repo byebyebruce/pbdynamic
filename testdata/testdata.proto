@@ -1,0 +1,33 @@
+syntax = "proto3";
+package testdata;
+
+option go_package = "github.com/byebyebruce/pbdynamic/testdata;testdata";
+
+message DummyMsg {
+  string name = 1;
+}
+
+enum DummyEnum {
+  TYPE_DUMMY_0 = 0;
+  TYPE_DUMMY_1 = 1;
+  TYPE_DUMMY_2 = 2;
+}
+message PBMsg {
+  double val_double = 1;
+  float val_float = 2;
+  int64 val_int64 = 3;
+  uint64 val_uint64 = 4;
+  int32 val_int32 = 5;
+  fixed64 val_fixed64 = 6;
+  fixed32 val_fixed32 = 7;
+  bool val_bool = 8;
+  string val_string = 9;
+  DummyMsg val_message = 10;
+  bytes val_bytes = 11;
+  uint32 val_uint32 = 12;
+  DummyEnum val_enum = 13;
+  sfixed32 val_sfixed32 = 14;
+  sfixed64 val_sfixed64 = 15;
+  sint32 val_sint32 = 16;
+  sint64 val_sint64 = 17;
+}
